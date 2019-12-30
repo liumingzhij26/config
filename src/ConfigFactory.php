@@ -10,7 +10,7 @@ declare(strict_types=1);
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
 
-namespace Hyperf\Config;
+namespace Hyperf\TfConfig;
 
 use Dotenv\Dotenv;
 use Psr\Container\ContainerInterface;
@@ -24,8 +24,8 @@ class ConfigFactory
         if (file_exists(BASE_PATH . '/.env')) {
             Dotenv::create([BASE_PATH])->load();
         }
-
         $configPath = BASE_PATH . '/config/';
+        print_r([__FILE__,$configPath]);exit;
         $config = $this->readConfig($configPath . 'config.php');
         $serverConfig = $this->readConfig($configPath . 'server.php');
         $autoloadConfig = $this->readPaths([BASE_PATH . '/config/autoload']);

@@ -10,7 +10,7 @@ declare(strict_types=1);
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
 
-namespace Hyperf\Config;
+namespace Hyperf\TfConfig;
 
 use Hyperf\Config\Listener\RegisterPropertyHandlerListener;
 use Hyperf\Contract\ConfigInterface;
@@ -19,6 +19,7 @@ class ConfigProvider
 {
     public function __invoke(): array
     {
+        print_r([__FILE__]);
         return [
             'dependencies' => [
                 ConfigInterface::class => ConfigFactory::class,

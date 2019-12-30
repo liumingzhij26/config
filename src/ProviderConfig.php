@@ -10,7 +10,7 @@ declare(strict_types=1);
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
 
-namespace Hyperf\Config;
+namespace Hyperf\TfConfig;
 
 use Hyperf\Utils\Composer;
 use function class_exists;

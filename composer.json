@@ -39,12 +39,12 @@
             "./src/Functions.php"
         ],
         "psr-4": {
-            "Hyperf\\Config\\": "src/"
+            "Hyperf\\TfConfig\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "HyperfTest\\Config\\": "tests/"
+            "HyperfTest\\TfConfig\\": "tests/"
         }
     },
     "config": {
@@ -55,7 +55,7 @@
             "dev-master": "1.1-dev"
         },
         "hyperf": {
-            "config": "Hyperf\\Config\\ConfigProvider"
+            "config": "Hyperf\\TfConfig\\ConfigProvider"
         }
     },
     "bin": [
