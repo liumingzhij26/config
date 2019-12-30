@@ -10,7 +10,7 @@ declare(strict_types=1);
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
 
-namespace Hyperf\Config\Annotation;
+namespace Hyperf\TfConfig\Annotation;
 
 use Hyperf\Di\Annotation\AbstractAnnotation;
 

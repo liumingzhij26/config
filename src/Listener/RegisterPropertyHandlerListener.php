@@ -10,9 +10,9 @@ declare(strict_types=1);
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
 
-namespace Hyperf\Config\Listener;
+namespace Hyperf\TfConfig\Listener;
 
-use Hyperf\Config\Annotation\Value;
+use Hyperf\TfConfig\Annotation\Value;
 use Hyperf\Contract\ConfigInterface;
 use Hyperf\Di\Definition\ObjectDefinition;
 use Hyperf\Di\Definition\PropertyHandlerManager;
