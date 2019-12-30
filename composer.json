@@ -1,5 +1,5 @@
 {
-    "name": "hyperf/config",
+    "name": "lmz/hyperf-config",
     "description": "An independent component that provides configuration container.",
     "license": "MIT",
     "keywords": [
