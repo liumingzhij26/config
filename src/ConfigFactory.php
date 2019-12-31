@@ -84,7 +84,6 @@ class ConfigFactory
                 $path = $file->getRelativePath() . DIRECTORY_SEPARATOR . $file->getBasename('.php');
             }
             $configs[] = pathToArray($path, require $filePath);
-
         }
         return $configs;
     }
