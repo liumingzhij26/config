@@ -42,6 +42,10 @@ if (!function_exists('pathToArray')) {
     function pathToArray($path, array $value): array
     {
         $config = [];
+        if (!$value) {
+            return $config;
+        }
+
         $tmp = &$config;
         foreach (explode(DIRECTORY_SEPARATOR, $path) as $key) {
             $tmp[$key] = [];
@@ -62,7 +66,7 @@ if (!function_exists('checkDirSameFile')) {
     function checkDirSameFile($dir)
     {
         $filename = sprintf($dir . '%s', '.php');
-        if (isFile($filename)) {
+        if (file_exists($filename) && is_readable($filename)) {
             throw new \RuntimeException(sprintf('Cannot have the same name as the folder %s', $filename));
         }
     }
