@@ -14,6 +14,7 @@ namespace Hyperf\TfConfig;
 
 use Psr\Container\ContainerInterface;
 use Symfony\Component\Finder\Finder;
+use Dotenv\Dotenv;
 
 class ConfigFactory
 {
