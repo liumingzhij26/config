@@ -12,6 +12,8 @@ declare(strict_types=1);
 
 namespace Hyperf\TfConfig;
 
+use Dotenv\Repository\RepositoryBuilder;
+use Dotenv\Repository\Adapter;
 use Psr\Container\ContainerInterface;
 use Symfony\Component\Finder\Finder;
 use Dotenv\Dotenv;
@@ -22,7 +24,16 @@ class ConfigFactory
     {
         // Load env before config.
         if (file_exists(BASE_PATH . '/.env')) {
-            Dotenv::create([BASE_PATH])->load();
+            $repository = RepositoryBuilder::create()
+                ->withReaders([
+                    new Adapter\PutenvAdapter(),
+                ])
+                ->withWriters([
+                    new Adapter\PutenvAdapter(),
+                ])
+                ->immutable()
+                ->make();
+            Dotenv::create($repository, [BASE_PATH])->load();
         }
         $configPath = BASE_PATH . '/config/';
         $config = $this->readConfig($configPath . 'config.php');
