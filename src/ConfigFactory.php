@@ -24,13 +24,8 @@ class ConfigFactory
     {
         // Load env before config.
         if (file_exists(BASE_PATH . '/.env')) {
-            $repository = RepositoryBuilder::create()
-                ->withReaders([
-                    new Adapter\PutenvAdapter(),
-                ])
-                ->withWriters([
-                    new Adapter\PutenvAdapter(),
-                ])
+            $repository = RepositoryBuilder::createWithNoAdapters()
+                ->addAdapter(Adapter\PutenvAdapter::class)
                 ->immutable()
                 ->make();
             Dotenv::create($repository, [BASE_PATH])->load();
